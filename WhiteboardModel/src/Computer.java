@@ -12,6 +12,7 @@ class Computer
     int numOfFans;
     int fanSpeed;
     int temperature;
+
     // BEHAVIORS, aka METHODS or FUNCTION
     void boot()
     {
@@ -34,6 +35,7 @@ class Computer
     }
     void powerOff()
     {
+        fanSpeed = 0;
         System.out.println("Computer is now off.");
     }
 }
