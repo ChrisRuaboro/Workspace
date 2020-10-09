@@ -32,5 +32,8 @@ class TelevisionTest
         Television tv3 = new Television("TCL");
         Television tv4 = new Television("Emerson", 43);
 
+        System.out.println(tv3);
+        System.out.println(tv4);
+
     }
 }

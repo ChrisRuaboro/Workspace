@@ -64,6 +64,6 @@ class Television
     @Override
     public String toString()
     {
-        return "Television{" + "brand='" + getBrand() + '\'' + ", volume=" + getBrand() + '}';
+        return "Television{" + "brand='" + getBrand() + '\'' + ", volume=" + getVolume() + '}';
     }
 }

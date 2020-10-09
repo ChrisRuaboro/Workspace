@@ -20,14 +20,44 @@ class Computer
     {
     }
 
-    public Computer(String brand, String gpuModel, String cpuModel, int numOfFans, int fanSpeed, int temperature, boolean isOn)
+    public Computer(String brand)
     {
         setBrand(brand);
+    }
+
+    public Computer(String brand, String gpuModel)
+    {
+        this(brand);
         setGpuModel(gpuModel);
+    }
+
+    public Computer(String brand, String gpuModel, String cpuModel)
+    {
+        this(brand, gpuModel);
         setCpuModel(cpuModel);
+    }
+
+    public Computer(String brand, String gpuModel, String cpuModel, int numOfFans)
+    {
+        this(brand, gpuModel, cpuModel);
         setNumOfFans(numOfFans);
+    }
+
+    public Computer(String brand, String gpuModel, String cpuModel, int numOfFans, int fanSpeed)
+    {
+        this(brand, gpuModel, cpuModel, numOfFans);
         setFanSpeed(fanSpeed);
+    }
+
+    public Computer(String brand, String gpuModel, String cpuModel, int numOfFans, int fanSpeed, int temperature)
+    {
+        this(brand, gpuModel, cpuModel, numOfFans, fanSpeed);
         setTemperature(temperature);
+    }
+
+    public Computer(String brand, String gpuModel, String cpuModel, int numOfFans, int fanSpeed, int temperature, boolean isOn)
+    {
+        this(brand, gpuModel, cpuModel, numOfFans, fanSpeed, temperature);
         setOn(isOn);
     }
 
