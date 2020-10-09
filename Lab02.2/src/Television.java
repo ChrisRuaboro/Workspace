@@ -44,4 +44,10 @@ class Television
     }
 
     // toString() method
+
+    @Override
+    public String toString()
+    {
+        return "Television{" + "brand='" + brand + '\'' + ", volume=" + volume + '}';
+    }
 }

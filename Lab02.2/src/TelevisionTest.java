@@ -18,5 +18,14 @@ class TelevisionTest
         Television tv2 = new Television();
         tv2.turnOn();
         tv2.turnOff();
+
+        // Call setter on tv2
+        tv2.setVolume(69);
+        tv2.setBrand("Samsung");
+
+        // Call toString() method implemented in Television business class
+        System.out.println(tv1);
+        System.out.println(tv2);
+
     }
 }
