@@ -5,6 +5,7 @@ class AlarmClock
 {
     //ATTRIBUTES, PROPERTIES, TRAITS - aka FIELDS, INSTANCE VARIABLES
     private int snoozeInterval = 10;
+    private int repeatCount;
 
     // CONSTRUCTORS - special methods that get called when client-side code says "new"
 
@@ -15,7 +16,13 @@ class AlarmClock
     }
     public AlarmClock(int snoozeInterval)
     {
-        setSnoozeInterval(snoozeInterval);
+        setSnoozeInterval(snoozeInterval); // delegate to setter for any possible validation, etc.
+    }
+
+    public AlarmClock(int snoozeInterval, int repeatCount)
+    {
+        this(snoozeInterval);             // delegate to the neighboring ctor above me for snooze
+        setRepeatCount(repeatCount);
     }
 
     //BEHAVIORS, FUNCTIONS, or METHODS
@@ -37,7 +44,20 @@ class AlarmClock
         {
             snoozeInterval = this.snoozeInterval;
         }
-        this.snoozeInterval = snoozeInterval;
+        else
+        {
+            this.snoozeInterval = snoozeInterval;
+        }
+    }
+
+    public int getRepeatCount()
+    {
+        return repeatCount;
+    }
+
+    public void setRepeatCount(int repeatCount)
+    {
+        this.repeatCount = repeatCount;
     }
 
     @Override
