@@ -19,7 +19,7 @@ class ComputerClient
 
         System.out.println(c1.toString()); // toString() automatically called
 
-        Computer c2 = new Computer("MSI", "Ryzen 7 3900x", "RTX 3090", 6, 7200, 65, true);
-        c2.toString();
+        Computer c2 = new Computer("MSI", "NVidia RTX 3090", "Ryzen 7 3900x", 6, 7200, 65, true);
+        System.out.println(c2.toString());
     }
 }

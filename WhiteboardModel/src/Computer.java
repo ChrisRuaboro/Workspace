@@ -1,5 +1,3 @@
-import org.w3c.dom.ls.LSOutput;
-
 /*
  * This is the business class from my whiteboard work in the breakout room (Lab 2.2)
  */
@@ -114,6 +112,7 @@ class Computer
         }
         else
         {
+            setOn(true);
             System.out.println("Starting your " + getBrand() + " computer");
         }
     }
@@ -138,6 +137,14 @@ class Computer
     {
         setOn(false);
         setFanSpeed(0);
-        System.out.println("Computer is now off.");
+        System.out.println("Your " + getBrand() + " is now off.");
+    }
+
+    // toString() method
+
+    @Override
+    public String toString()
+    {
+        return "Computer{" + "brand='" + brand + '\'' + ", gpuModel='" + gpuModel + '\'' + ", cpuModel='" + cpuModel + '\'' + ", numOfFans=" + numOfFans + ", fanSpeed=" + fanSpeed + ", temperature=" + temperature + ", isOn=" + isOn + '}';
     }
 }
