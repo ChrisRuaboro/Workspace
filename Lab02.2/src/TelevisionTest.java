@@ -27,5 +27,10 @@ class TelevisionTest
         System.out.println(tv1);
         System.out.println(tv2);
 
+        // Create new Television using new ctors
+
+        Television tv3 = new Television("TCL");
+        Television tv4 = new Television("Emerson", 43);
+
     }
 }
