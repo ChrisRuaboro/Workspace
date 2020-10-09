@@ -7,8 +7,8 @@ class TelevisionTest
     {
         //Create and instance of Television, set it properties/fields, and invoke its functions/methods
         Television tv1 = new Television();
-        tv1.brand = "Vizio";
-        tv1.volume = 99;
+        tv1.setBrand("Vizio");
+        tv1.setVolume(99);
 
         //call turnOn() and turnOff()
         tv1.turnOn();

@@ -6,8 +6,8 @@ import java.sql.SQLOutput;
 class Television
 {
     //FIELDS or INSTANCE VARIABLES ("attributes". "properties". "fields"
-    String brand;
-    int volume;
+    private String brand;
+    private int volume;
 
 
     // Business FUNCTIONS or METHODS
@@ -20,4 +20,28 @@ class Television
     {
         System.out.println("Shutting down, deuces.");
     }
+
+    // ACCESSOR METHODS - also known aas "getter/setter" methods
+
+    public String getBrand()
+    {
+        return brand;
+    }
+
+    public void setBrand(String brand)
+    {
+        this.brand = brand;
+    }
+
+    public int getVolume()
+    {
+        return volume;
+    }
+
+    public void setVolume(int volume)
+    {
+        this.volume = volume;
+    }
+
+    // toString() method
 }
