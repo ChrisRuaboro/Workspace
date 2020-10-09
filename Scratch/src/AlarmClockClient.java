@@ -19,5 +19,12 @@ class AlarmClockClient
         // create another instance of AlarmClock, BUT don't give it a value
         AlarmClock clock3 = new AlarmClock();
         clock3.snooze();
+
+        // exercise our new toString() method in AlarmClock
+        System.out.println(clock1.toString());
+        System.out.println(clock2.toString());
+
+        // toString automatically called when you println() an object reference
+        System.out.println(clock3);
     }
 }

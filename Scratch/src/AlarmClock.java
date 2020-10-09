@@ -27,4 +27,10 @@ class AlarmClock
         }
         this.snoozeInterval = snoozeInterval;
     }
+
+    @Override
+    public String toString()
+    {
+        return "AlarmClock{" + "snoozeInterval=" + snoozeInterval + '}';
+    }
 }
