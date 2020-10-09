@@ -1,4 +1,4 @@
-import java.sql.SQLOutput;
+import org.w3c.dom.ls.LSOutput;
 
 /*
  * This is the business class from my whiteboard work in the breakout room (Lab 2.2)
@@ -87,32 +87,57 @@ class Computer
         isOn = on;
     }
 
-    // BEHAVIORS, aka METHODS or FUNCTION
-    void boot()
+    // CONSTRUCTORS
+
+    //Default constructor that had to be placed because another one was created
+    public Computer()
     {
-        System.out.println("Starting your " + brand + " computer");
+    }
+
+    public Computer(String brand, String gpuModel, String cpuModel, int numOfFans, int fanSpeed, int temperature, boolean isOn)
+    {
+        setBrand(brand);
+        setGpuModel(gpuModel);
+        setCpuModel(cpuModel);
+        setNumOfFans(numOfFans);
+        setFanSpeed(fanSpeed);
+        setTemperature(temperature);
+        setOn(isOn);
+    }
+
+    // BEHAVIORS, aka METHODS or FUNCTION
+    public void boot()
+    {
+        if (isOn() == true)
+        {
+            System.out.println("Your " + getBrand() + " is already running :)");
+        }
+        else
+        {
+            System.out.println("Starting your " + getBrand() + " computer");
+        }
     }
 
     // Create toString() method
-    void listSpecs()
+    public void listSpecs()
     {
-        System.out.println("Your " + brand + " computer specs are");
-        System.out.println(cpuModel);
-        System.out.println(gpuModel);
-        System.out.println("with " + numOfFans + " fans running at " + fanSpeed + "rpms.");
+        System.out.println("Your " + getBrand() + " computer specs are");
+        System.out.println(getCpuModel());
+        System.out.println(getGpuModel());
+        System.out.println("with " + getNumOfFans() + " fans running at " + getFanSpeed() + "rpm.");
     }
-    void overheat()
+    public void overheat()
     {
-        temperature = 110;
-        System.out.println("Your " + brand + " computer is overheating!" +
-                "\n" + "current temperatures are " + temperature + " celsius" + "\n" +
+        setTemperature(110);
+        System.out.println("Your " + getBrand() + " computer is overheating!" +
+                "\n" + "current temperatures are " + getTemperature() + " celsius" + "\n" +
                 "Shutting down to prevent damage...");
         powerOff();
     }
-    void powerOff()
+    public void powerOff()
     {
-        isOn = false;
-        fanSpeed = 0;
+        setOn(false);
+        setFanSpeed(0);
         System.out.println("Computer is now off.");
     }
 }

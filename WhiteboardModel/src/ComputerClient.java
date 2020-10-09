@@ -6,15 +6,20 @@ class ComputerClient
     public static void main(String[] args)
     {
         Computer c1 = new Computer();
-        c1.brand = "NZXT";
-        c1.cpuModel = "i9-10900k";
-        c1.gpuModel = "NVidia RTX 3090";
-        c1.numOfFans = 4;
-        c1.fanSpeed = 7200;
-        c1.temperature = 80;
+        c1.setBrand("NZXT");
+        c1.setCpuModel("i9-10900k");
+        c1.setGpuModel("NVidia RTX 3090");
+        c1.setNumOfFans(4);
+        c1.setFanSpeed(7200);
+        c1.setTemperature(80);
 
         c1.boot();
         c1.listSpecs();
         c1.overheat();
+
+        System.out.println(c1.toString()); // toString() automatically called
+
+        Computer c2 = new Computer("MSI", "Ryzen 7 3900x", "RTX 3090", 6, 7200, 65, true);
+        c2.toString();
     }
 }
