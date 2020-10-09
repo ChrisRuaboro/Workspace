@@ -21,6 +21,22 @@ class Television
         System.out.println("Shutting down, deuces.");
     }
 
+    // CONSTRUCTORS = special client code when the client says new
+    public Television()
+    {
+
+    }
+    public Television(String brand)
+    {
+        setBrand(brand);
+    }
+    public Television(String brand, int volume)
+    {
+        this(brand);
+        setVolume(volume);
+    }
+
+
     // ACCESSOR METHODS - also known aas "getter/setter" methods
 
     public String getBrand()
