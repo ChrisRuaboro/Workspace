@@ -6,6 +6,18 @@ class AlarmClock
     //ATTRIBUTES, PROPERTIES, TRAITS - aka FIELDS, INSTANCE VARIABLES
     private int snoozeInterval = 10;
 
+    // CONSTRUCTORS - special methods that get called when client-side code says "new"
+
+    //Default constructor that had to be placed because another one was created
+    public AlarmClock()
+    {
+
+    }
+    public AlarmClock(int snoozeInterval)
+    {
+        setSnoozeInterval(snoozeInterval);
+    }
+
     //BEHAVIORS, FUNCTIONS, or METHODS
     public void snooze()
     {

@@ -7,7 +7,7 @@ class AlarmClockClient
     public static void main(String[] args)
     {
         //create an instance of AlarmClock and work with it
-        AlarmClock clock1 = new AlarmClock();
+        AlarmClock clock1 = new AlarmClock(5);
         clock1.setSnoozeInterval(-5);
         clock1.snooze();
 

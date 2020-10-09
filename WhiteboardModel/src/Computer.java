@@ -12,6 +12,26 @@ class Computer
     private int temperature;
     private boolean isOn;
 
+
+    // CONSTRUCTORS - special methods that get called when client-side code says "new"
+
+    //Default constructor that had to be placed because another one was created. side note - C# keeps it
+    public Computer()
+    {
+    }
+
+    public Computer(String brand, String gpuModel, String cpuModel, int numOfFans, int fanSpeed, int temperature, boolean isOn)
+    {
+        setBrand(brand);
+        setGpuModel(gpuModel);
+        setCpuModel(cpuModel);
+        setNumOfFans(numOfFans);
+        setFanSpeed(fanSpeed);
+        setTemperature(temperature);
+        setOn(isOn);
+    }
+
+
     // Getter/Setters for Fields in this Class
 
 
@@ -83,24 +103,6 @@ class Computer
     public void setOn(boolean on)
     {
         isOn = on;
-    }
-
-    // CONSTRUCTORS
-
-    //Default constructor that had to be placed because another one was created
-    public Computer()
-    {
-    }
-
-    public Computer(String brand, String gpuModel, String cpuModel, int numOfFans, int fanSpeed, int temperature, boolean isOn)
-    {
-        setBrand(brand);
-        setGpuModel(gpuModel);
-        setCpuModel(cpuModel);
-        setNumOfFans(numOfFans);
-        setFanSpeed(fanSpeed);
-        setTemperature(temperature);
-        setOn(isOn);
     }
 
     // BEHAVIORS, aka METHODS or FUNCTION
