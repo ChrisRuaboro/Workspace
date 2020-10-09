@@ -11,12 +11,12 @@ class Television
 
 
     // Business FUNCTIONS or METHODS
-    void turnOn()
+    public void turnOn()
     {
         System.out.println("Turning on your " + brand + " television to volume " + volume);
     }
 
-    void turnOff()
+    public void turnOff()
     {
         System.out.println("Shutting down, deuces.");
     }
@@ -48,6 +48,6 @@ class Television
     @Override
     public String toString()
     {
-        return "Television{" + "brand='" + brand + '\'' + ", volume=" + volume + '}';
+        return "Television{" + "brand='" + getBrand() + '\'' + ", volume=" + getBrand() + '}';
     }
 }
