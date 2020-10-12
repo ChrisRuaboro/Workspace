@@ -1,3 +1,5 @@
+import java.time.chrono.MinguoChronology;
+
 /*
  * This is the business class from my whiteboard work in the breakout room (Lab 2.2)
  */
@@ -8,6 +10,9 @@ class Computer
     // and are shared by those instances
     // there is only ONE COPY of each of these. Up there in that common storage area
     public static int DEFAULT_FANSPEED = 1600;
+    public static int MIN_FANSPEED = 0;
+    // TODO
+
     // ATTRIBUTES, PROPERTIES, aka FIELDS  or INSTANCE VARIABLES
     private String brand;
     private String gpuModel;
@@ -16,6 +21,7 @@ class Computer
     private int fanSpeed;
     private int temperature;
     private boolean isOn;
+    public TemperatureType tempType;
 
 
     // CONSTRUCTORS - special methods that get called when client-side code says "new"
@@ -64,6 +70,11 @@ class Computer
     {
         this(brand, gpuModel, cpuModel, numOfFans, fanSpeed, temperature);
         setOn(isOn);
+    }
+    public Computer(String brand, String gpuModel, String cpuModel, int numOfFans, int fanSpeed, int temperature, boolean isOn, TemperatureType tempType)
+    {
+        this(brand, gpuModel, cpuModel, numOfFans, fanSpeed, temperature, isOn);
+        setTempType(tempType);
     }
 
 
@@ -121,7 +132,7 @@ class Computer
     public void setFanSpeed(int fanSpeed)
     {
         // Check if user passed fanSpeed is in intervals of 100
-        if (fanSpeed%100 == 0)
+        if (fanSpeed >= MIN_FANSPEED && fanSpeed%100 == 0)
         {
             this.fanSpeed = fanSpeed;
         }
@@ -151,6 +162,16 @@ class Computer
         isOn = on;
     }
 
+    public TemperatureType getTempType()
+    {
+        return tempType;
+    }
+
+    public void setTempType(TemperatureType tempType)
+    {
+        this.tempType = tempType;
+    }
+
     // BEHAVIORS, aka METHODS or FUNCTION
     public void boot()
     {
@@ -161,7 +182,7 @@ class Computer
         else
         {
             setOn(true);
-            setFanSpeed(fanSpeed);
+            setFanSpeed(DEFAULT_FANSPEED);
             System.out.println("Starting your " + getBrand() + " computer");
         }
     }
@@ -184,8 +205,9 @@ class Computer
     }
     public void shutDown()
     {
-        setOn(false);
+        DEFAULT_FANSPEED = fanSpeed;
         setFanSpeed(0);
+        setOn(false);
         System.out.println("Your " + getBrand() + " is now off.");
     }
     public void shutDown(Boolean restart)
