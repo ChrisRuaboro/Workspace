@@ -3,12 +3,13 @@
  */
 class Computer
 {
+    public static int DEFAULT_FANSPEED = 1600;
     // ATTRIBUTES, PROPERTIES, aka FIELDS  or INSTANCE VARIABLES
     private String brand;
     private String gpuModel;
     private String cpuModel;
     private int numOfFans;
-    private int fanSpeed = 1600;
+    private int fanSpeed;
     private int temperature;
     private boolean isOn;
 
@@ -193,8 +194,9 @@ class Computer
     }
     public void shutDown(Boolean restart)
     {
-        setOn(false);
+        DEFAULT_FANSPEED = fanSpeed;
         setFanSpeed(0);
+        setOn(false);
         System.out.println("Your " + getBrand() + " is now off.");
         if (restart)
         {

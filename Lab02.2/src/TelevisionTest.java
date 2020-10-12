@@ -47,7 +47,7 @@ class TelevisionTest
         tv1.setBrand("Vizio");
         System.out.println(tv1);
         tv1.setBrand("Random tv");
-        
+
 
     }
 }
