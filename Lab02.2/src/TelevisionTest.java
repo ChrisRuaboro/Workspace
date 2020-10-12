@@ -39,6 +39,10 @@ class TelevisionTest
         tv4.setVolume(Television.MIN_VOLUME);
         tv1.setVolume(Television.DEFAULT_VOLUME);
 
+        Television tv5 = new Television();
+        tv5.DEFAULT_VOLUME = 10;
+        System.out.println(tv5);
+
 
     }
 }

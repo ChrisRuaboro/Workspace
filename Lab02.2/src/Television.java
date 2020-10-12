@@ -12,7 +12,7 @@ class Television
 
     public static final int MIN_VOLUME = 0;
     public static final int MAX_VOLUME = 100;
-    public static final int DEFAULT_VOLUME = 50;
+    public static int DEFAULT_VOLUME = 50;
 
     //FIELDS or INSTANCE VARIABLES ("attributes". "properties". "fields"
     private String brand;
@@ -68,6 +68,7 @@ class Television
         if (volume >= Television.MIN_VOLUME && volume <= Television.MAX_VOLUME)
         {
             this.volume = volume;
+            System.out.println("Volume has been set to " + this.volume);
         }
         else
         {
@@ -76,11 +77,25 @@ class Television
         }
     }
 
+    // Static getter and setter
+
+    public static int getDefaultVolume()
+    {
+        return DEFAULT_VOLUME;
+    }
+
+    public static void setDefaultVolume(int defaultVolume)
+    {
+        DEFAULT_VOLUME = defaultVolume;
+    }
+
+
     // toString() method
 
     @Override
     public String toString()
     {
-        return "Television{" + "brand='" + getBrand() + '\'' + ", volume=" + getVolume() + '}';
+        return "Television{" + "brand='" + getBrand()
+                + '\'' + ", volume=" + getVolume() + ", default volume=" + DEFAULT_VOLUME + '}';
     }
 }
