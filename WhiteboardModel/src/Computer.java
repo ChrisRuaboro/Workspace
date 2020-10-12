@@ -3,6 +3,10 @@
  */
 class Computer
 {
+    // Class level "Shared" VARIABLES
+    // these live in the class-level common storage area "above" all instances
+    // and are shared by those instances
+    // there is only ONE COPY of each of these. Up there in that common storage area
     public static int DEFAULT_FANSPEED = 1600;
     // ATTRIBUTES, PROPERTIES, aka FIELDS  or INSTANCE VARIABLES
     private String brand;
@@ -93,17 +97,9 @@ class Computer
 
     public void setCpuModel(String cpuModel)
     {
-        switch (cpuModel)
-        {
-            case "i7-7700k":
-            case "i9-10900k":
-            case "Ryzen 7 3700x":
-            case "Ryzen 5 3600x":
-            case "i7-8700k":
-                this.cpuModel = cpuModel;
-                break;
-            default:
-                System.out.println(brand + " is an invalid brand.");
+        switch (cpuModel) {
+            case "i7-7700k", "i9-10900k", "Ryzen 7 3700x", "Ryzen 5 3600x", "i7-8700k" -> this.cpuModel = cpuModel;
+            default -> System.out.println(brand + " is an invalid brand.");
         }
     }
 
@@ -158,7 +154,7 @@ class Computer
     // BEHAVIORS, aka METHODS or FUNCTION
     public void boot()
     {
-        if (isOn() == true)
+        if (isOn())
         {
             System.out.println("Your " + getBrand() + " is already running :)");
         }
