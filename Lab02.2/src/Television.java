@@ -64,9 +64,21 @@ class Television
         return brand;
     }
 
+    // Validate the incoming values so that only certain brands are accepted.
     public void setBrand(String brand)
     {
-        this.brand = brand;
+        switch (brand)
+        {
+            case "Samsung":
+            case "Vizio":
+            case "LG":
+            case "Toshiba":
+            case "Sony":
+                this.brand = brand;
+                break;
+            default:
+                System.out.println(brand + " is an invalid brand.");
+        }
     }
 
     public int getVolume()

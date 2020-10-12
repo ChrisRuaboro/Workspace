@@ -92,7 +92,18 @@ class Computer
 
     public void setCpuModel(String cpuModel)
     {
-        this.cpuModel = cpuModel;
+        switch (cpuModel)
+        {
+            case "i7-7700k":
+            case "i9-10900k":
+            case "Ryzen 7 3700x":
+            case "Ryzen 5 3600x":
+            case "i7-8700k":
+                this.cpuModel = cpuModel;
+                break;
+            default:
+                System.out.println(brand + " is an invalid brand.");
+        }
     }
 
     public int getNumOfFans()
