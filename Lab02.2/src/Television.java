@@ -17,6 +17,8 @@ class Television
     //FIELDS or INSTANCE VARIABLES ("attributes". "properties". "fields"
     private String brand;
     private int volume;
+    private DisplayType display;
+
 
 
     // Business FUNCTIONS or METHODS
@@ -55,9 +57,25 @@ class Television
         this(brand); //delegate to the constructor above me for brand
         setVolume(volume); // delegate to the setter for any validation/conversion
     }
+    public Television(String brand, int volume, DisplayType display)
+    {
+        this(brand, volume);
+        setDisplay(display);
+    }
 
 
     // ACCESSOR METHODS - also known aas "getter/setter" methods
+
+
+    public DisplayType getDisplay()
+    {
+        return display;
+    }
+
+    public void setDisplay(DisplayType display)
+    {
+        this.display = display;
+    }
 
     public String getBrand()
     {
@@ -119,6 +137,7 @@ class Television
     public String toString()
     {
         return "Television{" + "brand='" + getBrand()
-                + '\'' + ", volume=" + getVolume() + ", default volume=" + DEFAULT_VOLUME + '}';
+                + '\'' + ", volume=" + getVolume() + ", default volume="
+                + DEFAULT_VOLUME +  ", display type=" + getDisplay() + "}";
     }
 }
