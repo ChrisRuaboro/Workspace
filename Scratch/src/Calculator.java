@@ -1,15 +1,11 @@
 public class Calculator
 {
-    //Default fields
-    private int max = 22;
-    private int min = 1;
-
     // This method returns an int which represents the sum of the two input arguments
-    int add(int a, int b)
+    public static double add(double a, double b)
     {
         return a + b;
     }
-    int subtract(int a,int b)
+    public static double subtract(double a,double b)
     {
         return a - b;
     }
@@ -25,16 +21,14 @@ public class Calculator
      *  m.random();
      *  You *do not* do it this way. you simply call Math.random()
      */
-    int randomNumber()
+    public static int randomNumber()
     {
         int max = 22;
         int min = 1;
         return (int)(Math.random() * (max - min + 1) + min);
     }
-    int randomNumber(int max, int min)
+    public static int randomNumber(int max, int min)
     {
-        this.max = max;
-        this.min = min;
         return (int)(Math.random() * (max - min + 1) + min);
     }
 }
