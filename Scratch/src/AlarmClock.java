@@ -7,8 +7,8 @@ class AlarmClock
     // these live in the class-level common storage area "above" all instances
     // and are shared by those instances
     // there is only ONE COPY of each of these. Up there in that common storage area
-    private static int minInterval = 1;  // Lower bound of snoozeInterval
-    private static int maxInterval = 59; // Upper bound of snoozeInterval
+    public static final int MIN_INTERVAL = 1;  // Lower bound of snoozeInterval
+    public static final int MAX_INTERVAL = 59; // Upper bound of snoozeInterval
 
     //ATTRIBUTES, PROPERTIES, TRAITS - aka FIELDS, INSTANCE VARIABLES
     private int snoozeInterval = 10;  // 10 is the default when the client doesn't specify
@@ -46,7 +46,7 @@ class AlarmClock
     // TODO: add validation code to enforce range of values 1-59
     public void setSnoozeInterval(int snoozeInterval)
     {
-        if (snoozeInterval >= minInterval && snoozeInterval <= maxInterval) // "Positive Checking" "Inside bounds"
+        if (snoozeInterval >= MIN_INTERVAL && snoozeInterval <= MAX_INTERVAL) // "Positive Checking" "Inside bounds"
          //(snoozeInterval < 1 || snoozeInterval > 59) // "Negative checking" "Outside bounds"
         {
             snoozeInterval = this.snoozeInterval;
@@ -54,7 +54,7 @@ class AlarmClock
         else
         {
             System.out.println("Invalid value: " + snoozeInterval + "." +
-                    " The snooze interval should be between " + minInterval + " and " + maxInterval);
+                    " The snooze interval should be between " + MIN_INTERVAL + " and " + MAX_INTERVAL);
         }
     }
 
