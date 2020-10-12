@@ -5,6 +5,15 @@ import java.sql.SQLOutput;
  */
 class Television
 {
+    // Class level "Shared" VARIABLES
+    // these live in the class-level common storage area "above" all instances
+    // and are shared by those instances
+    // there is only ONE COPY of each of these. Up there in that common storage area
+
+    public static final int MIN_VOLUME = 0;
+    public static final int MAX_VOLUME = 100;
+    public static final int DEFAULT_VOLUME = 50;
+
     //FIELDS or INSTANCE VARIABLES ("attributes". "properties". "fields"
     private String brand;
     private int volume;
@@ -56,7 +65,15 @@ class Television
 
     public void setVolume(int volume)
     {
-        this.volume = volume;
+        if (volume >= Television.MIN_VOLUME && volume <= Television.MAX_VOLUME)
+        {
+            this.volume = volume;
+        }
+        else
+        {
+            System.out.println("Volume " + volume + " is out of range."
+                    + " Must be between " + Television.MIN_VOLUME + " and " + Television.MAX_VOLUME);
+        }
     }
 
     // toString() method

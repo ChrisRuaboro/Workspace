@@ -8,7 +8,7 @@ class AlarmClockClient
     {
         //create an instance of AlarmClock and work with it
         AlarmClock clock1 = new AlarmClock(5);
-        clock1.setSnoozeInterval(-5);
+        clock1.setSnoozeInterval(AlarmClock.MAX_INTERVAL);
         clock1.snooze();
 
         //Another instance of AlarmClock
@@ -26,5 +26,8 @@ class AlarmClockClient
 
         // toString automatically called when you println() an object reference
         System.out.println(clock3);
+
+        // AlarmClock.MAX_INTERVAL = 40;  Cannot assign a value to final variable 'MAX_INTERVAL'
+
     }
 }

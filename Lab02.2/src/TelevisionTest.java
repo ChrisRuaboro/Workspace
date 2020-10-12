@@ -35,5 +35,10 @@ class TelevisionTest
         System.out.println(tv3);
         System.out.println(tv4);
 
+        tv3.setVolume(Television.MAX_VOLUME);
+        tv4.setVolume(Television.MIN_VOLUME);
+        tv1.setVolume(Television.DEFAULT_VOLUME);
+
+
     }
 }

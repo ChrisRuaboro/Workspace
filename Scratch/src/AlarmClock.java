@@ -71,6 +71,6 @@ class AlarmClock
     @Override
     public String toString()
     {
-        return "AlarmClock{" + "snoozeInterval=" + snoozeInterval + '}';
+        return "AlarmClock{" + "snoozeInterval=" + getSnoozeInterval() + ", repeat =" + getRepeatCount() + '}';
     }
 }
