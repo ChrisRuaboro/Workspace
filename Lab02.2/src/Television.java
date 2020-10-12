@@ -29,6 +29,17 @@ class Television
     {
         System.out.println("Shutting down, deuces.");
     }
+    public void mute()
+    {
+        DEFAULT_VOLUME = volume;
+        setVolume(MIN_VOLUME);
+        System.out.println("Television muted");
+    }
+    public void unmute()
+    {
+        setVolume(DEFAULT_VOLUME);
+        System.out.println("Television unmuted.");
+    }
 
     // CONSTRUCTORS = special client code when the client says new
     public Television()
@@ -41,8 +52,8 @@ class Television
     }
     public Television(String brand, int volume)
     {
-        this(brand);
-        setVolume(volume);
+        this(brand); //delegate to the constructor above me for brand
+        setVolume(volume); // delegate to the setter for any validation/conversion
     }
 
 

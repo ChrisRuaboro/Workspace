@@ -1,11 +1,11 @@
-public class TelevisionClientTest
+public class TelevisionValidationTest
 {
     public static void main(String[] args)
     {
-        Television tv1 = new Television();
-        tv1.setVolume(0);
+        Television tv1 = new Television("Vizio");
+        tv1.setVolume(Television.MIN_VOLUME);
         System.out.println(tv1);
-        tv1.setVolume(100);
+        tv1.setVolume(Television.MAX_VOLUME);
         System.out.println(tv1);
         tv1.setVolume(101);
         System.out.println(tv1);
