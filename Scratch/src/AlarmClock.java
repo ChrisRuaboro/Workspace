@@ -3,11 +3,16 @@
  */
 class AlarmClock
 {
+    // Class level "Shared" VARIABLES
+    // these live in the class-level common storage area "above" all instances
+    // and are shared by those instances
+    // there is only ONE COPY of each of these. Up there in that common storage area
+    private static int minInterval = 1;  // Lower bound of snoozeInterval
+    private static int maxInterval = 59; // Upper bound of snoozeInterval
+
     //ATTRIBUTES, PROPERTIES, TRAITS - aka FIELDS, INSTANCE VARIABLES
     private int snoozeInterval = 10;  // 10 is the default when the client doesn't specify
     private int repeatCount;
-    private int minInterval = 1;
-    private int maxInterval = 59;
 
     // CONSTRUCTORS - special methods that get called when client-side code says "new"
 

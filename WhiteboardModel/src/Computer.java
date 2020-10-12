@@ -196,6 +196,9 @@ class Computer
     @Override
     public String toString()
     {
-        return "Computer{" + "brand='" + getBrand() + '\'' + ", gpuModel='" + getGpuModel() + '\'' + ", cpuModel='" + getCpuModel() + '\'' + ", numOfFans=" + getNumOfFans() + ", fanSpeed=" + getFanSpeed() + ", temperature=" + getTemperature() + ", isOn=" + isOn() + '}';
+        return "Computer{" + "brand='" + getBrand() + '\'' + ", gpuModel='"
+                + getGpuModel() + '\'' + ", cpuModel='" + getCpuModel() + '\''
+                + ", numOfFans=" + getNumOfFans() + ", fanSpeed=" + getFanSpeed()
+                + ", temperature=" + getTemperature() + ", isOn=" + isOn() + '}';
     }
 }
