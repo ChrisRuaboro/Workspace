@@ -6,6 +6,8 @@ class AlarmClock
     //ATTRIBUTES, PROPERTIES, TRAITS - aka FIELDS, INSTANCE VARIABLES
     private int snoozeInterval = 10;  // 10 is the default when the client doesn't specify
     private int repeatCount;
+    private int minInterval = 1;
+    private int maxInterval = 59;
 
     // CONSTRUCTORS - special methods that get called when client-side code says "new"
 
@@ -29,7 +31,6 @@ class AlarmClock
     public void snooze()
     {
         System.out.println("Snoozing for " + snoozeInterval + " minutes");
-
     }
     //Accessor methods - these provide "controlled" access to the internal fields
     //aka "getter/setter" methods common in OOP
@@ -40,13 +41,15 @@ class AlarmClock
     // TODO: add validation code to enforce range of values 1-59
     public void setSnoozeInterval(int snoozeInterval)
     {
-        if (snoozeInterval < 0 || snoozeInterval > 59)
+        if (snoozeInterval >= minInterval && snoozeInterval <= maxInterval) // "Positive Checking" "Inside bounds"
+         //(snoozeInterval < 1 || snoozeInterval > 59) // "Negative checking" "Outside bounds"
         {
             snoozeInterval = this.snoozeInterval;
         }
         else
         {
-            this.snoozeInterval = snoozeInterval;
+            System.out.println("Invalid value: " + snoozeInterval + "." +
+                    " The snooze interval should be between " + minInterval + " and " + maxInterval);
         }
     }
 

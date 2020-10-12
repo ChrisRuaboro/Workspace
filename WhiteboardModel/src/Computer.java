@@ -112,7 +112,15 @@ class Computer
 
     public void setFanSpeed(int fanSpeed)
     {
-        this.fanSpeed = fanSpeed;
+        // Check if user passed fanSpeed is in intervals of 100
+        if (fanSpeed%100 == 0)
+        {
+            this.fanSpeed = fanSpeed;
+        }
+        else
+        {
+            System.out.println("Fan speed must be in intervals of 100.");
+        }
     }
 
     public int getTemperature()
