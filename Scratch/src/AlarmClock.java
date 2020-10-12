@@ -4,7 +4,7 @@
 class AlarmClock
 {
     //ATTRIBUTES, PROPERTIES, TRAITS - aka FIELDS, INSTANCE VARIABLES
-    private int snoozeInterval = 10;
+    private int snoozeInterval = 10;  // 10 is the default when the client doesn't specify
     private int repeatCount;
 
     // CONSTRUCTORS - special methods that get called when client-side code says "new"
@@ -12,7 +12,7 @@ class AlarmClock
     //Default constructor that had to be placed because another one was created
     public AlarmClock()
     {
-
+        //no-op
     }
     public AlarmClock(int snoozeInterval)
     {

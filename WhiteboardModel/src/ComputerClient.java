@@ -25,5 +25,8 @@ class ComputerClient
 
         Computer c2 = new Computer("MSI", "NVidia RTX 3090", "Ryzen 7 3900x", 6, 7200, 65, true);
         System.out.println(c2);
+
+        c2.shutDown(true);
+
     }
 }

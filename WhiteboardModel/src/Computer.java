@@ -8,7 +8,7 @@ class Computer
     private String gpuModel;
     private String cpuModel;
     private int numOfFans;
-    private int fanSpeed;
+    private int fanSpeed = 1600;
     private int temperature;
     private boolean isOn;
 
@@ -145,6 +145,7 @@ class Computer
         else
         {
             setOn(true);
+            setFanSpeed(fanSpeed);
             System.out.println("Starting your " + getBrand() + " computer");
         }
     }
@@ -163,13 +164,23 @@ class Computer
         System.out.println("Your " + getBrand() + " computer is overheating!" +
                 "\n" + "current temperatures are " + getTemperature() + " celsius" + "\n" +
                 "Shutting down to prevent damage...");
-        powerOff();
+        shutDown();
     }
-    public void powerOff()
+    public void shutDown()
     {
         setOn(false);
         setFanSpeed(0);
         System.out.println("Your " + getBrand() + " is now off.");
+    }
+    public void shutDown(Boolean restart)
+    {
+        setOn(false);
+        setFanSpeed(0);
+        System.out.println("Your " + getBrand() + " is now off.");
+        if (restart)
+        {
+            boot();
+        }
     }
 
     // toString() method
