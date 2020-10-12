@@ -35,14 +35,19 @@ class TelevisionTest
         System.out.println(tv3);
         System.out.println(tv4);
 
-        tv3.setVolume(Television.MAX_VOLUME);
-        tv4.setVolume(Television.MIN_VOLUME);
-        tv1.setVolume(Television.DEFAULT_VOLUME);
+        tv3.setVolume(Television.MAX_VOLUME); // CRANK IT UP
+        tv4.setVolume(Television.MIN_VOLUME); // turn it down
+        tv1.setVolume(Television.DEFAULT_VOLUME); // Set default
 
         Television tv5 = new Television();
         tv5.DEFAULT_VOLUME = 10;
         System.out.println(tv5);
 
+        // Do some brand validation
+        tv1.setBrand("Vizio");
+        System.out.println(tv1);
+        tv1.setBrand("Random tv");
+        
 
     }
 }
