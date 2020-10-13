@@ -17,7 +17,7 @@ class Television
     //FIELDS or INSTANCE VARIABLES ("attributes". "properties". "fields"
     private String brand;
     private int volume;
-    private DisplayType display;
+    private DisplayType display = DisplayType.LED;
     private boolean isMuted;
     private int oldVolume;
 
