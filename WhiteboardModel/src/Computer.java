@@ -22,7 +22,7 @@ class Computer
     private int fanSpeed;
     private int temperature;
     private boolean isOn;
-    public TemperatureType tempType;
+    private TemperatureType tempType;
 
 
     // CONSTRUCTORS - special methods that get called when client-side code says "new"
