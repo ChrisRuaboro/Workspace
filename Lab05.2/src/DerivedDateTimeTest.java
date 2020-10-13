@@ -16,8 +16,8 @@ class DerivedDateTimeTest {
    */
   public static void main(String[] args) {
     // testPresidentsFirst100Days();
-     testPopularBirthdays();
-    // testEarlyRetirement();
+    // testPopularBirthdays();
+     testEarlyRetirement();
     // testLaborDay();
     // testElectionDay();
     // testAnniversary();
@@ -59,6 +59,10 @@ class DerivedDateTimeTest {
    */
   public static void testEarlyRetirement() {
     // TODO
+       LocalDate today = LocalDate.now();
+       LocalDate birth = LocalDate.of(1996, Month.JULY,31);
+       LocalDate retirementDate = birth.plusYears(59).plusMonths(6);
+    System.out.println(retirementDate);
   }
   
   /**
