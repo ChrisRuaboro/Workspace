@@ -18,6 +18,9 @@ class Television
     private String brand;
     private int volume;
     private DisplayType display;
+    private boolean isMuted;
+    private int oldVolume;
+
 
 
 
@@ -33,15 +36,25 @@ class Television
     }
     public void mute()
     {
-        DEFAULT_VOLUME = volume;
-        setVolume(MIN_VOLUME);
-        System.out.println("Television muted");
+        if (!this.isMuted())
+        {
+            DEFAULT_VOLUME = volume;
+            oldVolume = volume;
+            setVolume(MIN_VOLUME);
+            System.out.println("Television muted");
+            isMuted = true;
+        }
+        else
+        {
+            unmute();
+        }
     }
     public void unmute()
     {
-        setVolume(DEFAULT_VOLUME);
+        setVolume(oldVolume);
         System.out.println("Television unmuted.");
     }
+
 
     // CONSTRUCTORS = special client code when the client says new
     public Television()
@@ -80,6 +93,16 @@ class Television
     public String getBrand()
     {
         return brand;
+    }
+
+    public boolean isMuted()
+    {
+        return isMuted;
+    }
+
+    public void setMuted(boolean muted)
+    {
+        isMuted = muted;
     }
 
     // Validate the incoming values so that only certain brands are accepted.
