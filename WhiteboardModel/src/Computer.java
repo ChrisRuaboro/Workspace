@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.time.chrono.MinguoChronology;
 
 /*
@@ -121,7 +122,14 @@ class Computer
 
     public void setNumOfFans(int numOfFans)
     {
-        this.numOfFans = numOfFans;
+        if (numOfFans >= 0)
+        {
+            this.numOfFans = numOfFans;
+        }
+        else
+        {
+            System.out.println("Cannot have a negative amount of fans.");
+        }
     }
 
     public int getFanSpeed()
@@ -230,6 +238,7 @@ class Computer
         return "Computer{" + "brand='" + getBrand() + '\'' + ", gpuModel='"
                 + getGpuModel() + '\'' + ", cpuModel='" + getCpuModel() + '\''
                 + ", numOfFans=" + getNumOfFans() + ", fanSpeed=" + getFanSpeed()
-                + ", temperature=" + getTemperature() + ", isOn=" + isOn() + '}';
+                + ", temperature=" + getTemperature() + ", tempType=" + getTempType() +  '\''
+                + ", isOn" + isOn() + '}';
     }
 }
