@@ -1,3 +1,6 @@
+import java.time.LocalDate;
+import java.time.Month;
+
 /*
  * This code is sample code, provided as-is, and we make no
  * warranties as to its correctness or suitability for
@@ -13,7 +16,7 @@ class DerivedDateTimeTest {
    */
   public static void main(String[] args) {
     // testPresidentsFirst100Days();
-    // testPopularBirthdays();
+     testPopularBirthdays();
     // testEarlyRetirement();
     // testLaborDay();
     // testElectionDay();
@@ -24,10 +27,12 @@ class DerivedDateTimeTest {
    * TASK: new American presidents are often measured by their performance during the first 100 days in office.
    * Inauguration Day 2017 is Jan 20.  When is this president's 100-day deadline?
    * 
-   * RESULT: 
+   * RESULT: 2017-04-30
    */
   public static void testPresidentsFirst100Days() {
     // TODO
+    LocalDate inauguration = LocalDate.of(2017, Month.JANUARY, 20);
+    System.out.println(inauguration.plusDays(100));
   }
 
   /**
@@ -39,7 +44,9 @@ class DerivedDateTimeTest {
    */
   public static void testPopularBirthdays() {
     // TODO: what is the average birthday of someone conceived on Valentine's Day?
-    
+      LocalDate vday = LocalDate.of(2021, Month.FEBRUARY,14);
+      LocalDate dueDate = vday.plusWeeks(38);
+    System.out.println(dueDate);
     // TODO: what is the average birthday of someone conceived on New Year's Eve (after midnight)?
   }
   

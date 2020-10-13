@@ -6,7 +6,10 @@
  * We hope that it's useful to you.  Enjoy.
  * Copyright LearningPatterns Inc.
  */
+import java.sql.Time;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.Month;
 
 class DateTimeTest {
   /**
@@ -30,11 +33,14 @@ class DateTimeTest {
   /**
    * TASK: implement the TODOs and print your results.
    */
-  public void testCreate() {
+  public static void testCreate() {
     // TODO: create your birthday via of(). What day of the week were you born on?
-        
+    LocalDate bdayChris = LocalDate.of(1996, Month.JULY, 31);
+    System.out.println(bdayChris.getDayOfWeek());
+
     // TODO: use of() to create a value representing the 1st lunar landing - it happened on 7/20/69 at 3:18pm Eastern Time.
     // Note: ignore time-zone, just assume Eastern Time is the local time.
+    LocalDateTime moonLanding = LocalDateTime.of(1969, Month.JULY,20,15,18);
   }
 
   /**
