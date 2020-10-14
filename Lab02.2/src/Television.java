@@ -14,6 +14,9 @@ class Television
     public static final int MAX_VOLUME = 100;
     public static int DEFAULT_VOLUME = 50;
 
+    public static final String[] VALID_BRANDS =
+            {"Samsung", "LG", "Sony", "Toshiba"};
+
     //FIELDS or INSTANCE VARIABLES ("attributes". "properties". "fields"
     private String brand;
     private int volume;
