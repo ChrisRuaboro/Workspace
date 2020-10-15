@@ -6,7 +6,7 @@
  * We hope that it's useful to you.  Enjoy.
  * Copyright LearningPatterns Inc.
  */
- 
+
 /*
  * Lab - Composition
  *
@@ -16,18 +16,22 @@
  */
 
 package com.entertainment.test;
+
 import com.entertainment.DisplayType;
 import com.entertainment.Television;
 
 
-class TelevisionTest {
-  
-  public static void main(String[] args) {
-	  Television tv = new Television("Samsung", 65, DisplayType.LED);
-	  System.out.println(tv);
-	  
-	  // TODO: Change the channel
-	  
-	  System.out.println(tv);
-  }
+class TelevisionTest
+{
+
+    public static void main(String[] args)
+    {
+        Television tv = new Television("Samsung", 65, DisplayType.LED);
+        System.out.println(tv);
+
+        // TODO: Change the channel
+        tv.changeChannel("ESPN");
+        System.out.println(tv.getCurrentChannel());
+        System.out.println(tv);
+    }
 }

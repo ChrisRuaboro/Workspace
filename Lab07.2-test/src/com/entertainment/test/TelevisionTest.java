@@ -1,8 +1,6 @@
 package com.entertainment.test;
 
 import com.entertainment.Television;
-import com.entertainment.util.Useful;
-
 /*
     This is client-side code that test drives instances of television.
  */

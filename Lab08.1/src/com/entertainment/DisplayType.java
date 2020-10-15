@@ -8,4 +8,5 @@ package com.entertainment;
  * Copyright LearningPatterns Inc.
  */
 
-public enum DisplayType { LED, OLED, PLASMA, LCD, CRT }
+public enum DisplayType
+{LED, OLED, PLASMA, LCD, CRT}
