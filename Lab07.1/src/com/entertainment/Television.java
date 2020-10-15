@@ -1,9 +1,9 @@
-import java.sql.SQLOutput;
+package com.entertainment;
 
 /*
  A business class that models the workings of a television.
  */
-class Television
+public class Television
 {
     // Class level "Shared" VARIABLES
     // these live in the class-level common storage area "above" all instances
@@ -44,7 +44,7 @@ class Television
             DEFAULT_VOLUME = volume;
             oldVolume = volume;
             setVolume(MIN_VOLUME);
-            System.out.println("Television muted");
+            System.out.println("com.entertainment.Television muted");
             isMuted = true;
         }
         else
@@ -55,7 +55,7 @@ class Television
     public void unmute()
     {
         setVolume(oldVolume);
-        System.out.println("Television unmuted.");
+        System.out.println("com.entertainment.Television unmuted.");
     }
 
 
@@ -162,7 +162,7 @@ class Television
     @Override
     public String toString()
     {
-        return "Television{" + "brand='" + getBrand()
+        return "com.entertainment.Television{" + "brand='" + getBrand()
                 + '\'' + ", volume=" + getVolume() + ", default volume="
                 + DEFAULT_VOLUME +  ", display type=" + getDisplay() + "}";
     }
