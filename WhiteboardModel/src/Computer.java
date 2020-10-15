@@ -177,10 +177,29 @@ class Computer
 
     public void setTempType(TemperatureType tempType)
     {
-        this.tempType = tempType;
+        boolean isValid = isValidTemperatureType(tempType);
+        if (isValid = true)
+        {
+            this.tempType = tempType;
+            return;
+        }
+        System.out.println("Not a valid tempType");
     }
 
     // BEHAVIORS, aka METHODS or FUNCTION
+    public boolean isValidTemperatureType(TemperatureType tempType)
+    {
+        boolean isValid = false;
+        for (TemperatureType x : TemperatureType.values()) // Interates through TemperatureType
+        {
+            if(x.equals(tempType)) // checks to see if match
+            {
+                isValid = true; // Match found!
+                return isValid; // Return is valid
+            }
+        }
+        return isValid;
+    }
     public void boot()
     {
         if (isOn())
