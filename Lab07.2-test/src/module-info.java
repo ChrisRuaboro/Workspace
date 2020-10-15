@@ -8,5 +8,5 @@ module com.entertainment.test
     // I am the "client" module - no other module uses the classes in my packages
 
     // BUT i *must* "requires" the modules that i want access too
-    exports com.entertainment;
+    requires com.entertainment;
 }

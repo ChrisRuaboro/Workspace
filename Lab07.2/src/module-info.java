@@ -6,7 +6,7 @@
 
 module com.entertainment
 {
-    //which of the two modules can other modules see
+    //which of the two modules can other modules see?
 
     exports com.entertainment;
 }
