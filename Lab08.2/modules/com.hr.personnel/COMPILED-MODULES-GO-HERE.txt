@@ -1,3 +1,0 @@
-We put our compiled code here.  This conforms to standard naming and structure conventions for code using modules.
-
-It is not required, but is a good convention to follow.
