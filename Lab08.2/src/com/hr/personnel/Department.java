@@ -64,6 +64,15 @@ public class Department
         }
     }
 
+    // Pay all employees
+    public void payEmployees()
+    {
+        for (int i = 0; i < currentIndex; i++)
+        {
+            employees[i].pay();
+        }
+    }
+
     // tells all employees to take vacation
     public void holidayBreak()
     {
@@ -73,6 +82,7 @@ public class Department
             {
                 // we know that we're really dealing with a SalariedEmployee
                 // so we can "downcast" the ref to a more specific SalariedEmployee ref
+                // on the fly downcast and method call
                 ((SalariedEmployee) employees[i]).takeVacation();
             }
             // employees[i].takeVacation();  // can't call this, because the reference is type employee

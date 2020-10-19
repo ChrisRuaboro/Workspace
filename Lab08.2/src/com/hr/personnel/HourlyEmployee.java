@@ -21,7 +21,11 @@ public class HourlyEmployee extends Employee
         setRate(rate);
         setHours(hours);
     }
-
+    // BUSINESS METHODS
+    public void pay()
+    {
+        System.out.println(getName() + " is paid hourly " + (getRate()*getHours()));
+    }
     public double getRate()
     {
         return rate;

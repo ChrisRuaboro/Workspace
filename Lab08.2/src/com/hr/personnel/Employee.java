@@ -44,6 +44,12 @@ public class Employee
     }
 
     // BEHAVIORAL METHODS
+
+    public void pay()
+    {
+        
+    }
+
     public void work()
     {
         System.out.println(getName() + " working hard since " + getHireDate());
