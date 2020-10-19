@@ -50,14 +50,16 @@ public class Department
     {
         // Note that we don't use for-each here because we only want to access the array where employees were added
         // Question: What is in the array for indices where no Employee was added?
-        for (int i = 0; i < currentIndex; i++) {
+        for (int i = 0; i < currentIndex; i++)
+        {
             System.out.println(employees[i]); // toString() auto called
         }
     }
     // makes all employees work
     public void workEmployees()
     {
-        for (int i = 0; i < currentIndex; i++) {
+        for (int i = 0; i < currentIndex; i++)
+        {
             employees[i].work();
         }
     }
@@ -65,8 +67,15 @@ public class Department
     // tells all employees to take vacation
     public void holidayBreak()
     {
-        for (int i = 0; i < currentIndex; i++) {
-            employees[i].takeVacation();  // can't call this, because the reference is type employee
+        for (int i = 0; i < currentIndex; i++)
+        {
+            if (employees[i] instanceof SalariedEmployee)
+            {
+                // we know that we're really dealing with a SalariedEmployee
+                // so we can "downcast" the ref to a more specific SalariedEmployee ref
+                ((SalariedEmployee) employees[i]).takeVacation();
+            }
+            // employees[i].takeVacation();  // can't call this, because the reference is type employee
         }
     }
 
