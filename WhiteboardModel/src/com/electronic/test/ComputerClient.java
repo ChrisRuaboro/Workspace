@@ -1,5 +1,10 @@
+package com.electronic.test;
+
+import com.electronic.Computer;
+import com.electronic.TemperatureType;
+
 /*
- * This is the main-class, we use it to test drive instances of Computer.
+ * This is the main-class, we use it to test drive instances of com.electronic.Computer.
  */
 class ComputerClient
 {
@@ -21,12 +26,12 @@ class ComputerClient
 
         System.out.println(c1); // toString() automatically called
 
-        // Instantiated new Computer with ctor that takes arguments
+        // Instantiated new com.electronic.Computer with ctor that takes arguments
 
         Computer c2 = new Computer("MSI", "NVidia RTX 3090", "Ryzen 7 3900x", 6, 7200, 65, true);
         System.out.println(c2);
 
-        // Assigning TemperatureType to computer 2
+        // Assigning com.electronic.TemperatureType to computer 2
         c2.setTempType(TemperatureType.CELSIUS);
         c2.shutDown(true);
 

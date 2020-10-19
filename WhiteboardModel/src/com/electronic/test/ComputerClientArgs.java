@@ -1,3 +1,8 @@
+package com.electronic.test;
+
+import com.electronic.Computer;
+import com.electronic.TemperatureType;
+
 class ComputerClientArgs
 {
     public static void main(String[] args)

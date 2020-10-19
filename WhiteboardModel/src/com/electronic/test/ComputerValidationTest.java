@@ -1,5 +1,10 @@
+package com.electronic.test;
+
+import com.electronic.Computer;
+import com.electronic.TemperatureType;
+
 /*
- * Here, we do validation testing for Computer.
+ * Here, we do validation testing for com.electronic.Computer.
  */
 class ComputerValidationTest
 {

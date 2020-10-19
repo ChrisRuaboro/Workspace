@@ -1,10 +1,9 @@
-import java.sql.SQLOutput;
-import java.time.chrono.MinguoChronology;
+package com.electronic;
 
 /*
  * This is the business class from my whiteboard work in the breakout room (Lab 2.2)
  */
-class Computer
+public class Computer
 {
     // Class level "Shared" VARIABLES
     // these live in the class-level common storage area "above" all instances
@@ -190,7 +189,7 @@ class Computer
     public boolean isValidTemperatureType(TemperatureType tempType)
     {
         boolean isValid = false;
-        for (TemperatureType x : TemperatureType.values()) // Interates through TemperatureType
+        for (TemperatureType x : TemperatureType.values()) // Interates through com.electronic.TemperatureType
         {
             if(x.equals(tempType)) // checks to see if match
             {
@@ -254,7 +253,7 @@ class Computer
     @Override
     public String toString()
     {
-        return "Computer{" + "brand='" + getBrand() + '\'' + ", gpuModel='"
+        return "com.electronic.Computer{" + "brand='" + getBrand() + '\'' + ", gpuModel='"
                 + getGpuModel() + '\'' + ", cpuModel='" + getCpuModel() + '\''
                 + ", numOfFans=" + getNumOfFans() + ", fanSpeed=" + getFanSpeed()
                 + ", temperature=" + getTemperature() + ", tempType=" + getTempType() +  '\''
