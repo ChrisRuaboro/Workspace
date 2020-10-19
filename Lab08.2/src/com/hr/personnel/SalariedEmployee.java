@@ -24,10 +24,13 @@ public class SalariedEmployee extends Employee
         setSalary(salary);
     }
     // BUSINESS METHODS
+
+    // this is a responsibility / task ONLy performed by SalariedEmployees (not common)
     public void takeVacation()
     {
         System.out.println(getName() + "is on vacation");
     }
+    @Override
     public void pay()
     {
         System.out.println(getName() + " is paid salaried " + getSalary());

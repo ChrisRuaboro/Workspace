@@ -13,6 +13,7 @@ package gov.irs;
  * TaxPayer is our simple interface for working with interfaces.
  */
 
-public interface TaxPayer {
-  public void payTaxes();
+public interface TaxPayer
+{
+    public void payTaxes();
 }

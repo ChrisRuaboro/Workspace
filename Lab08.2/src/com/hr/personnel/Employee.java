@@ -26,7 +26,7 @@ package com.hr.personnel;
 
 import java.time.LocalDate;
 
-public class Employee
+public abstract class Employee
 {
     // FIELDS
     private String name;
@@ -44,11 +44,9 @@ public class Employee
     }
 
     // BEHAVIORAL METHODS
-
-    public void pay()
-    {
-        
-    }
+    // we declare that all employees do this, but we don't ssay how
+    // (we dont't implement it here, because we can't)
+    public abstract void pay();
 
     public void work()
     {

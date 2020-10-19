@@ -25,7 +25,7 @@ import com.hr.personnel.Employee;
 import com.hr.personnel.HourlyEmployee;
 import com.hr.personnel.SalariedEmployee;
 
-public class Client
+public class HRClient
 {
 
     public static void main(String[] args)
