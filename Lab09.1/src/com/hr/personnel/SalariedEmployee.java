@@ -48,6 +48,12 @@ public class SalariedEmployee extends Employee
         System.out.println(getName() + " paid taxes of ");
     }
 
+    @Override
+    public double getStandardDeduction()
+    {
+        return 6500.0;
+    }
+
     // ACCESSOR METHODS
     public double getSalary()
     {

@@ -16,6 +16,10 @@ package gov.irs;
 public interface TaxPayer
 {
     public void payTaxes();
+    default public double getStandardDeduction()
+    {
+        return 7500.0;
+    }
     default public void fileReturn()
     {
         System.out.println("File returned by US Mail");

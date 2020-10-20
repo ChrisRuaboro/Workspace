@@ -22,11 +22,18 @@ public class IRS
     private int currentIndex = 0;  // for dealing with array
 
     // BEHAVIORAL METHODS
+    // For each TaxPayer we get them to :
+    // fileReturn()
+    // getStandardDeduction()
+    // payTaxes()
+    // then print a blank line
     public void collectTaxes()
     {
         for (int i = 0; i < currentIndex; i++) {
+            payers[i].getStandardDeduction();
             payers[i].fileReturn();
             payers[i].payTaxes();
+            System.out.println();
         }
     }
 
