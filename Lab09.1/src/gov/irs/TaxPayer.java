@@ -16,4 +16,8 @@ package gov.irs;
 public interface TaxPayer
 {
     public void payTaxes();
+    default public void fileReturn()
+    {
+        System.out.println("File returned by US Mail");
+    }
 }
