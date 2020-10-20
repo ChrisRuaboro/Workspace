@@ -18,6 +18,7 @@
 package com.entertainment.test;
 
 import com.entertainment.DisplayType;
+import com.entertainment.InvalidBrandException;
 import com.entertainment.Television;
 
 
@@ -26,8 +27,16 @@ class TelevisionTest
 
     public static void main(String[] args)
     {
-        Television tv = new Television("Samsung", 65, DisplayType.LED);
-        System.out.println(tv);
+        Television tv = null;
+        try
+        {
+            tv = new Television("Samsung", 65, DisplayType.LED);
+            System.out.println(tv);
+        }
+        catch (InvalidBrandException e)
+        {
+            System.out.println(e);
+        }
 
         // TODO: Change the channel
         tv.changeChannel("ESPN");

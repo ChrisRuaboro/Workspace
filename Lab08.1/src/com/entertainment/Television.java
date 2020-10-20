@@ -21,6 +21,9 @@
 
 package com.entertainment;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class Television
 {
 
@@ -46,21 +49,21 @@ public class Television
     }
 
     // One-arg constructor for volume
-    public Television(int volume)
+    public Television(int volume) throws IllegalArgumentException
     {
         this(); // Invoke no-arg constructor
         setVolume(volume);
     }
 
     // One-arg constructor for brand
-    public Television(String brand)
+    public Television(String brand) throws InvalidBrandException
     {
         this();  // Invoke no-arg constructor
         setBrand(brand);
     }
 
     // 2-arg constructor
-    public Television(String brand, int volume)
+    public Television(String brand, int volume) throws InvalidBrandException, IllegalArgumentException
     {
         this();
         setBrand(brand);
@@ -68,7 +71,7 @@ public class Television
     }
 
     // 3-arg constructor
-    public Television(String brand, int volume, DisplayType display)
+    public Television(String brand, int volume, DisplayType display) throws InvalidBrandException, IllegalArgumentException
     {
         this(brand, volume);  // Explicit constructor call to reuse its implementation
         this.display = display;
@@ -102,12 +105,17 @@ public class Television
         return volume;
     }
 
-    public void setVolume(int volume)
+    /*
+     * IllegalArgument is UNCHECKED.
+     * Therefore, i do not "have" to "announce" this possibility in a 'throws' clause
+     * in the method signature
+     */
+    public void setVolume(int volume) throws IllegalArgumentException
     {
         if (volume >= MIN_VOLUME && volume <= MAX_VOLUME) {
             this.volume = volume;
         } else {
-            System.out.println("Invalid volume: " + volume + ". Volume must be between " + MIN_VOLUME + " and " + MAX_VOLUME + ".");
+            throw new IllegalArgumentException("Invalid volume: " + volume + ". Volume must be between " + MIN_VOLUME + " and " + MAX_VOLUME + ".");
         }
     }
 
@@ -115,17 +123,16 @@ public class Television
     {
         return brand;
     }
-
-    public void setBrand(String brand)
+    /*
+     * InvalidBrandException is CHECKED.
+     * Therefore i must *announce*
+     */
+    public void setBrand(String brand) throws InvalidBrandException
     {
         if (isValidBrand(brand)) {
-            this.brand = brand;
+            this.brand = brand; // brand is acceptable, so set the field
         } else {
-            System.out.print("Invalid brand: " + brand + ". Brand must be one of ");
-            for (String currentBrand : VALID_BRANDS) {
-                System.out.print(currentBrand + ", ");
-            }
-            System.out.println();
+            throw new InvalidBrandException("Invalid Brand:" + brand + ", Brand must be one of " + Arrays.toString(VALID_BRANDS));
         }
     }
 
