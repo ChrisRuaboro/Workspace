@@ -15,6 +15,8 @@ package gov.irs;
  *
  */
 
+import jdk.jshell.execution.JdiExecutionControl;
+
 public class IRS
 {
     // INSTANCE VARIABLES
@@ -30,8 +32,9 @@ public class IRS
     public void collectTaxes()
     {
         for (int i = 0; i < currentIndex; i++) {
-            payers[i].getStandardDeduction();
             payers[i].fileReturn();
+            double deduction = payers[i].getStandardDeduction();
+            System.out.println("Deduction amount is " + deduction);
             payers[i].payTaxes();
             System.out.println();
         }

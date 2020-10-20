@@ -45,7 +45,7 @@ public class SalariedEmployee extends Employee
     public void payTaxes()
     {
         double taxes = getSalary() * TAX_RATE;
-        System.out.println(getName() + " paid taxes of ");
+        System.out.println(getName() + " paid taxes of " + taxes);
     }
 
     @Override
