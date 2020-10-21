@@ -22,7 +22,7 @@ public class HourlyEmployee extends Employee
     {
         super(name, hireDate);
     }
-    public HourlyEmployee(String name, LocalDate hireDate, double rate, double hours)
+    public HourlyEmployee(String name, LocalDate hireDate, double rate, double hours) throws IllegalArgumentException
     {
         this(name, hireDate);
         setRate(rate);
