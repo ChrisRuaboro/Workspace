@@ -57,8 +57,14 @@ public class InMemoryCatalog implements Catalog {
 	@Override
 	public Collection<MusicItem> findByKeyword(String keyword)
 	{
-		// Collection<MusicItem> = new Collection<>();
-		return null;
+		Collection<MusicItem> result = new ArrayList<>();
+		for (MusicItem currentItem : catalogData) {
+			if (currentItem.getTitle().equalsIgnoreCase(keyword) || currentItem.getArtist().equalsIgnoreCase(keyword))
+			{
+				result.add(currentItem);
+			}
+		}
+		return result;
 	}
 
 	@Override
@@ -75,7 +81,7 @@ public class InMemoryCatalog implements Catalog {
 	@Override
 	public int size()
 	{
-		return 0;
+		return catalogData.size();
 	}
 
 	@Override
@@ -108,17 +114,42 @@ public class InMemoryCatalog implements Catalog {
 	 * TASK: find all MusicItems where title is same as artist.
 	 * For example, Madonna's first album is simply titled, "Madonna."
 	 */
+	public Collection<MusicItem> findAllSelfTitled()
+	{
+		Collection<MusicItem> result = new ArrayList<>();
+
+		//TODO
+
+		return result;
+	}
 
 
 	/**
 	 * TASK: find all "rock" items whose price is less than or equal to the specified price.
 	 */
 
+	public Collection<MusicItem> cheapRock(double price)
+	{
+		Collection<MusicItem> result = new ArrayList<>();
+
+		//TODO
+
+		return result;
+	}
+
 
 	/**
 	 * TASK: how many items of the specified genre do we sell?
 	 */
 
+	public int countByGenre(MusicCategory genre)
+	{
+		int result = 0;
+
+		//TODO
+
+		return result;
+	}
 
 	/**
 	 * TASK: determine average price of our low-cost, extensive catalog of music.
@@ -151,7 +182,7 @@ public class InMemoryCatalog implements Catalog {
 	 * TASK: determine the titles of all "pop" items, sorted by natural order.
 	 * Just the titles!
 	 */
-
+	// public List<String> titles
 
 	/**
 	 * TASK: find all items released in the 80s whose price is less than or equal to the specified price.
