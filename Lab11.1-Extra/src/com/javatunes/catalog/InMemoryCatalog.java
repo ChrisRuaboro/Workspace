@@ -119,6 +119,12 @@ public class InMemoryCatalog implements Catalog {
 		Collection<MusicItem> result = new ArrayList<>();
 
 		//TODO
+		for (MusicItem musicItem : catalogData) {
+			if (musicItem.getTitle().equals(musicItem.getArtist()))
+			{
+				result.add(musicItem);
+			}
+		}
 
 		return result;
 	}
@@ -165,7 +171,17 @@ public class InMemoryCatalog implements Catalog {
 	/**
 	 * TASK: determine average price of our low-cost, extensive catalog of music.
 	 */
+	public double avgPrice()
+	{
+		double avg = 0.0;
+		double total = 0.0;
+		for (MusicItem musicItem : catalogData) {
+			total += musicItem.getPrice();
+		}
+		avg = total/catalogData.size();
 
+		return avg;
+	}
 
 	/**
 	 * TASK: find the cheapest item with the specified genre.

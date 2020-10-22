@@ -16,8 +16,8 @@ public class InMemoryCatalogTest
         //testFindById();
         //testFindByCategory();
         //testFindByKeyword();
-        testSize();
-
+        //testSize();
+        //testGetAll();
     }
 
 
@@ -81,7 +81,9 @@ public class InMemoryCatalogTest
     private static void testGetAll()
     {
         InMemoryCatalog testCatalog = new InMemoryCatalog();
-        testCatalog.getAll();
+        // read only unmodifiable
+        Collection<MusicItem> allItems = testCatalog.getAll();
+        printCollection(allItems);
     }
 
 }
