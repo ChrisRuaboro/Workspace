@@ -13,6 +13,22 @@ public class Employee {
     }
 
     // BUSINESS METHODS
+    public void goHome() throws DestinationUnreachableException, WorkException
+    {
+        Car c = new Car("CC13", "Lincoln", "Town Car");
+        try
+        {
+            c.moveTo("My house");
+            System.out.println("Arrived back home!`");
+        }
+        // catch the low-level transportation-oriented exception
+        // and then throw a high level HR-oriented exception, which makes more sense
+        // to the client that's calling me
+        catch (DestinationUnreachableException e)
+        {
+            throw new WorkException("Unable to get home", e); // catch-and-rethrow | e is the 'cause'
+        }
+    }
     public void goToWork() throws DestinationUnreachableException{
         // TODO: create an instance of Car with all three properties: vin, make, model
         Car c = new Car("A123", "Toyota", "Prius");

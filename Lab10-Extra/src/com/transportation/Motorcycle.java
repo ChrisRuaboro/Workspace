@@ -14,10 +14,5 @@ public class Motorcycle extends Vehicle
     {
         System.out.println("Cruising along at 120mph to " + destination);
     }
-    @Override
-    public void rust() throws Exception
-    {
-
-    }
 
 }
