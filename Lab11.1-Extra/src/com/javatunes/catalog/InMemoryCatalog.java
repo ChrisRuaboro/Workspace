@@ -72,7 +72,7 @@ public class InMemoryCatalog implements Catalog {
 	{
 		Collection<MusicItem> result = new ArrayList<>();
 		for (MusicItem musicItem : catalogData) {
-			if (musicItem.getMusicCategory().equals(category)) // can use == because enums are THE ONLY can be comparedwith ==
+			if (musicItem.getMusicCategory() == category) // can use == because enums are THE ONLY can be comparedwith ==
 				result.add(musicItem);
 		}
 		return result;
@@ -87,7 +87,7 @@ public class InMemoryCatalog implements Catalog {
 	@Override
 	public Collection<MusicItem> getAll()
 	{
-		return null;
+		return Collections.unmodifiableCollection(catalogData);
 	}
 	// AFTER YOU'VE SATISFIED YOUR CONTRACTUAL OBLIGATIONS ABOVE, DO THESE ADDITIONAL TASKS.
 	// NOTES:
@@ -133,6 +133,12 @@ public class InMemoryCatalog implements Catalog {
 		Collection<MusicItem> result = new ArrayList<>();
 
 		//TODO
+		for (MusicItem musicItem : catalogData) {
+			if (musicItem.getPrice() <= price)
+			{
+				result.add(musicItem);
+			}
+		}
 
 		return result;
 	}
@@ -146,7 +152,12 @@ public class InMemoryCatalog implements Catalog {
 	{
 		int result = 0;
 
-		//TODO
+		for (MusicItem musicItem : catalogData) {
+			if (musicItem.getMusicCategory().equals(genre))
+			{
+				result++;
+			}
+		}
 
 		return result;
 	}

@@ -6,6 +6,7 @@ import com.javatunes.catalog.MusicItem;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class InMemoryCatalogTest
@@ -60,6 +61,13 @@ public class InMemoryCatalogTest
     private static void testSize()
     {
         List<MusicItem> testCatalog = new ArrayList<>();
+        testCatalog.add(new MusicItem(32L));
+        System.out.println(testCatalog.size());
+        testCatalog.add(new MusicItem(33L));
+        testCatalog.add(new MusicItem(34L));
+        testCatalog.add(new MusicItem(35L));
+        testCatalog.add(new MusicItem(36L));
+        testCatalog.add(new MusicItem(37L));
         System.out.println(testCatalog.size());
     }
     // Helper method
@@ -69,6 +77,11 @@ public class InMemoryCatalogTest
         {
             System.out.println(musicItem);
         }
+    }
+    private static void testGetAll()
+    {
+        InMemoryCatalog testCatalog = new InMemoryCatalog();
+        testCatalog.getAll();
     }
 
 }
