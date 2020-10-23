@@ -7,8 +7,7 @@
  */
 package com.poetry.io;
 
-import java.io.BufferedReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.stream.Stream;
 
 public class PoemClient {
@@ -18,7 +17,7 @@ public class PoemClient {
    */
   public static void main(String[] args) {
     // readPoem();
-    // writePoem();
+     writePoem();
   }
   
   /**
@@ -33,9 +32,11 @@ public class PoemClient {
    * Use a try-with-resources to initialize the stream and auto-close it.
    */
   private static void readPoem() {
-    try (BufferedReader reader = null) {  // TODO: initialize 'reader' variable
+    try (BufferedReader reader = new BufferedReader(new FileReader("famous-poem.txt"))) {  // TODO: initialize 'reader' variable
       // here is an easy way to dump out all the lines
       // you may not have worked with Java 8 streams, so we give this to you
+      // Your Option: leave those as-is, and just be left wondering ehat Stream<String> is
+      // OR      change the two lines below to match session p.392
       Stream<String> lines = reader.lines();
       lines.forEach(System.out::println);
     }
@@ -52,5 +53,16 @@ public class PoemClient {
    */
   private static void writePoem() {
     // TODO
+    try (PrintWriter haiku = new PrintWriter(new FileWriter("haiku.txt")))
+    {
+      haiku.println("Life gives you lemons");
+      haiku.println("But you can't make lemonade");
+      haiku.println("Throw an exception");
+    }
+    catch (IOException e) {
+      e.printStackTrace();
+    }
+
+
   }
 }
