@@ -1,0 +1,3 @@
+Life gives you lemons
+but you can't make lemonade
+Throw an exception

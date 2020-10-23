@@ -20,8 +20,8 @@ public class PoemClientNew
    * Uncomment these after you've completed their implementations.
    */
   public static void main(String[] args) {
-      readPoem();
-     // writePoem();
+      // readPoem();
+      writePoem();
   }
   
   /**
@@ -53,6 +53,8 @@ public class PoemClientNew
     try
     {
       // Read lines into list
+
+      // NOTE: in Java 11 they added path.of() to the Path interface itself
       List<String> lines = Files.readAllLines(Paths.get("famous-poem.txt")); //Path object
 
       // Dump the list
@@ -74,7 +76,19 @@ public class PoemClientNew
    */
   private static void writePoem() {
 
-
+    List<String> haiku = List.of(
+            "Life gives you lemons",
+            "but you can't make lemonade",
+            "Throw an exception");
+    try
+    {
+      // Paths.get or Path.of
+      Files.write(Paths.get("my-poem.txt"), haiku);
+    }
+    catch (IOException e)
+    {
+      System.out.println(e);
+    }
 
 
 
